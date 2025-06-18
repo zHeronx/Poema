@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gramática com graça</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(#fffaf0, #ffe4e1);
+      color: #333;
+      text-align: center;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+    }
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #c2185b;
+      margin-bottom: 1rem;
+    }
+    .poem, .thanks {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      border: 2px solid #c2185b;
+    }
+    .poem::before, .thanks::before {
+      content: "";
+      position: absolute;
+      top: -3px; bottom: -3px; left: -3px; right: -3px;
+      border-radius: 15px;
+      background: linear-gradient(270deg, 
+        rgba(194,24,91,0.8), 
+        rgba(255,105,180,0.9), 
+        rgba(194,24,91,0.8));
+      animation: shine 4s linear infinite;
+      z-index: -1;
+      filter: blur(6px);
+      opacity: 0.7;
+    }
+    @keyframes shine {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 200% 50%;
+      }
+    }
+
+    .poem p {
+      margin: 1rem 0;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    .thanks {
+      font-style: italic;
+      background: #fff3f4;
+    }
+    .roses {
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .rose {
+      position: absolute;
+      width: 60px;
+      fill: #c2185b;
+      stroke: #a01449;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      opacity: 0.8;
+      animation: floatDown 12s linear infinite;
+    }
+    .rose:nth-child(1) {
+      left: 10%;
+      animation-delay: 0s;
+      animation-duration: 14s;
+    }
+    .rose:nth-child(2) {
+      left: 40%;
+      animation-delay: 3s;
+      animation-duration: 16s;
+    }
+    .rose:nth-child(3) {
+      left: 70%;
+      animation-delay: 6s;
+      animation-duration: 13s;
+    }
+
+    @keyframes floatDown {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.8;
+      }
+      90% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    footer {
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      color: #777;
+      position: relative;
+      z-index: 1;
+    }
+    /* Botão música */
+    #music-button {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      padding: 0.5rem 1rem;
+      background: #c2185b;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      transition: background 0.3s ease;
+    }
+    #music-button:hover {
+      background: #e91e63;
+    }
+  </style>
+</head>
+<body>
+  <div class="roses" aria-hidden="true">
+    <svg class="rose" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+      <path d="M12 21c0-2-4-4-4-8s4-8 4-8 4 4 4 8-4 6-4 8z"/>
+      <circle cx="12" cy="12" r="3"/>
+    </svg>
+    <svg class="rose" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+      <path d="M12 21c0-2-4-4-4-8s4-8 4-8 4 4 4 8-4 6-4 8z"/>
+      <circle cx="12" cy="12" r="3"/>
+    </svg>
+    <svg class="rose" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+      <path d="M12 21c0-2-4-4-4-8s4-8 4-8 4 4 4 8-4 6-4 8z"/>
+      <circle cx="12" cy="12" r="3"/>
+    </svg>
+  </div>
+
+  <h1>Gramática com graça</h1>
+  <div class="poem">
+    <p>Português sempre foi confuso,<br />
+    Cheio de regra e de detalhe obtuso.<br />
+    Mas aí chegou a tal da Joice,<br />
+    Com um jeito prático que até me trouxe <em>voze</em>... (ou quase 😅)</p>
+
+    <p>Nada de decorar sem entender,<br />
+    Ela fazia a gente ver, viver, aprender!<br />
+    Substantivo virou quase amigo,<br />
+    E até crase... eu enfrento sem perigo!</p>
+
+    <p>Tinha atividade que dava até gosto,<br />
+    (Mesmo quando errava um aposto!)<br />
+    Ela ria, explicava de novo com calma,<br />
+    E de pouco em pouco, aprendi com a alma.</p>
+
+    <p>Não foram mil aulas, foi só uma parte,<br />
+    Mas bastou pra fazer brotar essa arte.<br />
+    Hoje deixo aqui meu agradecimento:<br />
+    Por me ensinar com leveza e talento.</p>
+
+    <p>Então, Joice, receba essa rima caprichada,<br />
+    De um (ex) sofredor da gramática torturada.<br />
+    Você virou verbo, virou ação,<br />
+    Virou poesia no meu coração! 💙</p>
+  </div>
+
+  <div class="thanks">
+    <p>Professora Joice,</p>
+    <p>Mesmo com poucas aulas, a senhora conseguiu transformar a minha relação com o português. Antes, era só uma matéria que eu queria terminar rápido. Hoje, é algo que consigo entender — e até admirar — graças ao seu jeito leve, prático e humano de ensinar.</p>
+    <p>Como desenvolvedor, quis transformar esse agradecimento em algo com a minha cara e com o carinho que sua aula merece. Obrigado por plantar esse conhecimento com tanta graça.</p>
+    <p>Com gratidão, <strong>Cleverson</strong></p>
+  </div>
+
+  <footer>
+    Desenvolvido com carinho por Cleverson • <a href="#top">Voltar ao topo</a>
+  </footer>
+
+  <audio id="bg-music" src="/Coração-de-Criança-_-Tablatura-Solo-de-Violão-Simplificado-_-Abertura-Dragon-Ball-GT.mp3" loop>
+  </audio>
+  <button id="music-button" onclick="toggleMusic()">🎵 Música</button>
+
+  <script>
+    const audio = document.getElementById("bg-music");
+    const button = document.getElementById("music-button");
+
+    function toggleMusic() {
+      if (audio.paused) {
+        audio.play();
+        button.textContent = "⏸️ Pausar Música";
+      } else {
+        audio.pause();
+        button.textContent = "🎵 Música";
+      }
+    }
+  </script>
+</body>
+</html>
